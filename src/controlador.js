@@ -22,9 +22,20 @@ pedirTokenSpotify()
         pista.setAttribute("controls","controls")
         pista.src=cancion.preview_url
 
+        let foto=document.createElement("img")
+        foto.classList.add("img-fluid","w-100")
+        foto.src=cancion.album.images[0].url
+
+        let nombre=document.createElement("h4")
+        nombre.classList.add("text-center","fw-bold")
+        nombre.textContent=cancion.name
+
+        tarjeta.appendChild(foto)
+        tarjeta.appendChild(nombre)
         tarjeta.appendChild(pista)
         columna.appendChild(tarjeta)
         fila.appendChild(columna)
+        
     
         })
         console.log(respuesta.tracks[0])
